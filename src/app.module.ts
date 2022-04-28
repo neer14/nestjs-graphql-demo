@@ -19,9 +19,7 @@ import { StripeModule } from './gateways/stripe.module';
       // definitions: {
       //   path: join(process.cwd(), 'src/interfaces/graphql.ts'),
       // },
-    }), PaymentsModule, StripeModule.forRoot(process.env.STRIPE_KEY,{
-      apiVersion: '2020-08-27'
-    })],
+    }), PaymentsModule, StripeModule.forRoot()],
   controllers: [AppController],
   providers: [AppService],
 })
