@@ -3,6 +3,6 @@ import { PaymentsService } from './payments.service';
 import { PaymentsResolver } from './payments.resolver';
 
 @Module({
-  providers: [PaymentsService, PaymentsResolver]
+  providers: [PaymentsService, PaymentsResolver],
 })
 export class PaymentsModule {}

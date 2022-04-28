@@ -4,17 +4,17 @@ import { StripeAdaptor } from '../adaptors/stripe.adaptor';
 
 @Module({})
 export class StripeModule {
-    static forRoot(): DynamicModule {
-        const stripe = new StripeAdaptor();
-        const stripeProvider: Provider = {
-            provide: STRIPE_CLIENT,
-            useValue: stripe
-        }
-        return {
-            module: StripeModule,
-            providers: [stripeProvider],
-            exports: [stripeProvider],
-            global: true
-        }
-    }
+  static forRoot(): DynamicModule {
+    const stripe = new StripeAdaptor();
+    const stripeProvider: Provider = {
+      provide: STRIPE_CLIENT,
+      useValue: stripe,
+    };
+    return {
+      module: StripeModule,
+      providers: [stripeProvider],
+      exports: [stripeProvider],
+      global: true,
+    };
+  }
 }

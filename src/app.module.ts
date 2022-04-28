@@ -19,8 +19,11 @@ import { StripeModule } from './gateways/stripe.module';
       // definitions: {
       //   path: join(process.cwd(), 'src/interfaces/graphql.ts'),
       // },
-    }), PaymentsModule, StripeModule.forRoot()],
+    }),
+    PaymentsModule,
+    StripeModule.forRoot(),
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule { }
+export class AppModule {}

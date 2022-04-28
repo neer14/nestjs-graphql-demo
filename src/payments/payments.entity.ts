@@ -2,7 +2,7 @@ import { Field, Int, ID, registerEnumType, ObjectType } from '@nestjs/graphql';
 
 export enum GatewayEnum {
   STRIPE = 'stripe',
-  CHECKOUT = 'checkout'
+  CHECKOUT = 'checkout',
 }
 
 registerEnumType(GatewayEnum, {
@@ -11,21 +11,21 @@ registerEnumType(GatewayEnum, {
 
 export const gatewayEnumResolver: Record<keyof typeof GatewayEnum, any> = {
   STRIPE: 'stripe',
-  CHECKOUT: 'checkout'
+  CHECKOUT: 'checkout',
 };
 
 @ObjectType()
 export class Card {
-  @Field(type => GatewayEnum)
+  @Field(() => GatewayEnum)
   gateway: GatewayEnum;
 
-  @Field(type => ID)
+  @Field(() => ID)
   id: string;
 
-  @Field(type => Int)
+  @Field(() => Int)
   expMonth: number;
 
-  @Field(type => Int)
+  @Field(() => Int)
   expYear: number;
 
   @Field()
