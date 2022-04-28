@@ -6,6 +6,7 @@ import { gatewayEnumResolver } from './payments/payments.entity';
 import { GraphQLModule } from '@nestjs/graphql';
 import { join } from 'path';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
+import { StripeModule } from './gateways/stripe.module';
 @Module({
   imports: [
     GraphQLModule.forRoot<ApolloDriverConfig>({
@@ -18,7 +19,9 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
       // definitions: {
       //   path: join(process.cwd(), 'src/interfaces/graphql.ts'),
       // },
-    }), PaymentsModule],
+    }), PaymentsModule, StripeModule.forRoot(process.env.STRIPE_KEY,{
+      apiVersion: '2020-08-27'
+    })],
   controllers: [AppController],
   providers: [AppService],
 })

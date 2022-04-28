@@ -7,7 +7,7 @@ type Card {
   id: ID!
   expMonth: Int!
   expYear: Int!
-  last4: Int!
+  last4: String!
   name: String!
 }
 

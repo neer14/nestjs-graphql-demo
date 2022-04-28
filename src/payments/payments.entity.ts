@@ -28,8 +28,8 @@ export class Card {
   @Field(type => Int)
   expYear: number;
 
-  @Field(type => Int)
-  last4: number;
+  @Field()
+  last4: string;
 
   @Field()
   name: string;
