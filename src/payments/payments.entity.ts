@@ -33,4 +33,7 @@ export class Card {
 
   @Field()
   name: string;
+
+  @Field()
+  type: string;
 }

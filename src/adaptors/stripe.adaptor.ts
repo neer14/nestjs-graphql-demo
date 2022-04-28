@@ -36,6 +36,7 @@ export class StripeAdaptor {
             .then((cards: { data: Stripe.CustomerSource[] }) => {
                 const resCards: Card[] = [];
                 cards.data?.forEach((card: Stripe.Card) => {
+                    console.log(JSON.stringify(card))
                     resCards.push({
                         gateway: GatewayEnum.STRIPE,
                         id: card.id,
@@ -43,6 +44,7 @@ export class StripeAdaptor {
                         expYear: card.exp_year,
                         last4: card.last4,
                         name: card.name,
+                        type: card.brand
                     });
                 });
                 return resCards;

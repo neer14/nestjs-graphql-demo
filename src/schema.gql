@@ -9,6 +9,7 @@ type Card {
   expYear: Int!
   last4: String!
   name: String!
+  type: String!
 }
 
 enum GatewayEnum {
