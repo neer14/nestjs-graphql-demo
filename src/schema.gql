@@ -1,0 +1,21 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Card {
+  gateway: GatewayEnum!
+  id: ID!
+  expMonth: Int!
+  expYear: Int!
+  last4: Int!
+  name: String!
+}
+
+enum GatewayEnum {
+  STRIPE
+  CHECKOUT
+}
+
+type Query {
+  cards(customer_id: String!, gateway: GatewayEnum!): [Card!]!
+}
